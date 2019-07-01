@@ -1,3 +1,6 @@
+#step 1: pip install paramiko
+
+#step 2: pip install cryptography==2.4.2
 import base64 
 import paramiko 
 #host = 'x.x.x.x'
