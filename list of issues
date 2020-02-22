@@ -1,0 +1,4 @@
+ABOUT TO PRINT DATA
+[{'vm_name': 'e4m5poc1_filer', 'status': 'Fail', 'message': '10.40.30.21 ESXi host unavailable', 'esx_host_ip': u'10.40.30.21'}]
++++++++++++++++++++++
+
