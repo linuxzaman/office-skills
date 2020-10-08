@@ -1,0 +1,36 @@
+# Create Virtual Environment using python
+
+cat createVenv.sh
+virtualenv -p python3.6 $1
+
+# Find offline ips
+pingtest.sh
+#!/bin/bash
+iplist=$(cat $1)
+for ip in $iplist
+do
+        ping -c1 $ip
+        if [ $? -ne 0 ]
+        then
+                echo $ip >>~/offline_ip.txt
+        fi
+done
+
+
+#### Ansible for windows
+
+cat copy_file.yml
+---
+- hosts: all
+  gather_facts: no
+  vars:
+    - ansible_connection: winrm
+    - ansible_winrm_server_cert_validation: ignore
+  tasks:
+
+  - name: Copy a single file
+    win_copy:
+      src: testme_welcome.txt
+      dest: C:\Users\Administrator\Downloads\testme\
+
+
